@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex10</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var dic = {f0: 100, "f1": 200, name: "홍길동"};
+		document.write(dic);
+		console.log(dic);
+		document.write(` => type : ${typeof dic}<br>`);
+		
+		document.write(dic.f0);
+		document.write(dic["name"]);
+		
+		document.write("<hr>");
+		const data = [1,2,3,4,5,6,7,8,9,10];
+
+		let resultMap = data.map( (value)=> value <= 5 );
+		document.write(resultMap + "<br>");
+		// true,...,true,false,...,false (map:조건을 돌려줌)
+
+		let resultFilter = data.filter( (value)=> value <= 5 );
+		document.write(resultFilter + "<br>");
+		// 1, 2, 3, 4, 5 (filter: 데이터를 돌려줌)
+		
+	</script>
+</body>
+</html>

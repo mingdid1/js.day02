@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex06</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const city = ["서울", "부산", "인천"];
+		document.write(city);
+		
+		city[3] = "aaa";
+
+		document.write("<hr>" + city);
+		document.write("<hr>city type : " + typeof city);
+		
+		const join01 = city.join();
+		const join02 = city.join(" - ");
+		
+		document.write("<hr> join01 : " + join01);
+		document.write("<hr> join01 : " + typeof join01);
+		document.write("<hr> join02 : " + join02);
+		document.write("<hr> join02 : " + typeof join02);
+		
+	</script>
+</body>
+</html>

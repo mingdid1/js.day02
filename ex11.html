@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex11</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var DB = [
+			{id : "aaa", name: "홍길동", age: 20},
+			{id : "bbb", name: "김개똥", age: 22},
+			{id : "ccc", name: "고길동", age: 24}];
+		
+		window.onload = () => {
+			const test = document.querySelector(".test");		
+			const tb = document.querySelector("#tb");
+			let msg = `아이디: ${DB[0].id}<br>`;
+			msg +=  `이름: ${DB[0].name}<br>`;
+			msg +=  `나이: ${DB[0].age}<br>`;
+			test.innerHTML = msg;
+		}
+		
+		const member = () => {
+			const tb = document.querySelector("#tb");
+			let msg ="";
+			for (const user of DB){
+				msg += `아이디: ${user.id}<br>`;
+				msg += `이름: ${user["name"]}<br>`;
+				msg += `나이: ${user.age}<hr>`;
+			}
+			tb.innerHTML = msg;
+		}
+		
+		const memberInfo = () => {
+			const id = document.querySelector("#id");
+			/*
+			const result = DB.filter( (value) => {
+				console.log(value);
+				return id.value == value.id;
+			});
+			console.log(result[0]);	// undefined: 존재하지 않는 데이터
+			console.log(result.length);	// 0이면 존재하지 않는 데이터
+			*/
+
+			// 변수 = (조건식)? 참:거짓;
+			const result = DB.filter( (value) => id.value == value.id);
+			console.log(result);
+			console.log(result.length);
+		}
+	</script>
+	
+	<div id = "info"></div>
+	<input type="text" id="id">
+	<input type="button" onclick="memberInfo()" value="검색">
+	<hr>
+	
+	
+	<div class="test"></div>
+	<hr>
+	<div id="tb"></div>
+	<button type="button" onclick="member()">클릭</button>
+
+
+</body>
+</html>

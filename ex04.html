@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+		img { width: 100px; height: 100px;}
+	</style>
+	
+	<script type="text/javascript">
+		var flag = true;
+		const chimg01 = () => {
+			let img = document.getElementById("img01");
+			let msg = "";
+			if (flag) {
+				msg = "images/p2.png";
+			}else {
+				msg = "images/p1.png";
+			}
+			flag = !flag;
+			img.src = msg;
+		}
+		const chimg02 = () => {
+			const h = document.getElementById("h");
+			h.style.color = "red";
+			//h.style.background = "yellow";
+			h.style.textAlign = "center";
+		}
+	</script>
+</head>
+<body>
+	<img id="img01" src="images/p1.png" onclick="chimg01()"><br>
+	
+	<img id="img02" src="images/p1.png" onclick="chimg02()"><br>
+	<h3 id="h">test</h3>
+	
+</body>
+</html>

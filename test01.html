@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test01</title>
+	<style type="text/css">
+		img {width: 100px; height: 100px;}
+	</style>
+	<script type="text/javascript">
+		let click = 0;
+		const next= () => {
+			let img = document.getElementById("img01");
+			click ++;
+			click_p = click % 6 + 1;
+			console.log(click_p);
+			let msg = "최근상품0" + click_p +".jpg";
+			img.src = msg;
+		}
+		const back= () => {
+			let img = document.getElementById("img01");
+			click --;
+			click_p = click % 6 + 1;
+			if (click_p <= 0){
+				click_p += 6;
+			}
+			console.log(click_p);
+			let msg = "최근상품0" + click_p +".jpg";
+			img.src = msg;
+		}
+	</script>	
+</head>
+<body>
+	<img id = "img01" src="최근상품01.jpg"><br>
+	<button type="button" onclick="back()">이전사진</button>
+	<button type="button" onclick="next()">다음사진</button>
+
+</body>
+</html>

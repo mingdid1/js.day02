@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex09</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const data = [111, 222, 333];
+		function mapArr(value) {
+			return `<b style="color:red;">${value}</b><br>`;
+		}
+		const result = data.map(mapArr);
+		document.write(result);
+
+		/*
+		const result02 = data.map( (value)=>{
+			return value + 1000;
+		} );
+		아래와 같은 내용*/
+		document.write("<hr>");
+		const result02 = data.map( (value)=> value + 1000 );
+		document.write(result02);
+		
+		
+		document.write("<hr>");
+		data.forEach( (value, index)=> {
+			data[index] = value + 1000;
+		});
+		document.write(data);
+	</script>
+</body>
+</html>

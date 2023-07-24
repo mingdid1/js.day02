@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test02</title>
+	<style>
+		* { margin: 0; }
+		img { width: 100px; height: 100px; }
+		.img { border: 1px solid gray;
+			width: 100px; height: 100px;
+			position: relative;
+			/* 자식 span요소를 absolute를 사용하기 위해 설정*/
+		}
+		.flex { display: flex;  }
+		span {
+			/*absolute가 적용되면 inline태그의 사이즈도 조정 가능해 진다*/
+			position: absolute; background: orange;
+			top: 25px; left: 25px; width: 50px; height: 50px;
+			
+			/*line-height와 height의 크기를 같게 하면 글씨가 가운데 정렬된다*/
+			text-align: center; line-height: 50px;
+		}
+	</style>
+	
+	<script type="text/javascript">
+		const images = ["images/최근상품01.jpg","images/최근상품02.jpg",
+					"images/최근상품03.jpg","images/최근상품04.jpg",
+					"images/최근상품05.jpg","images/최근상품06.jpg"];
+		
+		window.onload = function init(){
+			console.log("init")
+			let msg = "<div class='flex'>";
+			for(let i=0; i < images.length ; i++){
+				msg += `<div class="img" id="${i}" onMousemove="imgOver(${i})" onMouseout="imgOut(${i})">`;
+				msg += `<img src="${images[i]}" >`
+				msg += "</div>"
+				if( i+1 == Number(images.length/2) )
+					msg +="</div><div class='flex'>"
+			}
+			const wrap = document.getElementById("wrap");
+			wrap.innerHTML = msg;
+		}
+		
+		const imgOver=(index)=>{
+			const span = document.getElementById(index);
+			span.innerHTML = `<span onMousemove="imgOver(${index})">선택</span>`;
+		}
+		
+		const imgOut=(index)=>{
+			const div = document.getElementById(index);
+			div.innerHTML = `<img src="${images[index]}">`;
+		}
+	</script>
+</head>
+<body>
+	<div id="wrap" style="width:420px;"></div>
+</body>
+</html>

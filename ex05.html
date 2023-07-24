@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	
+	<style type="text/css">
+	   .img { width:100px; height: 100px; }
+	</style>
+
+	<script type="text/javascript">
+		let msg = "안녕하세요";
+	    function aaa(){
+	    	const test = document.getElementById("test");
+	        console.log( test );
+	        test.innerHTML = msg;
+	     }
+	     const images = ["images/최근상품01.jpg",
+						"images/최근상품02.jpg",
+					    "images/최근상품03.jpg",
+					  	"images/최근상품04.jpg",];
+	     
+	     //window.onload (window 생략가능)
+		onload = () =>{
+	   	const div = document.getElementById("test");
+	   	let m = "";
+	   		for(var i=0 ; i<images.length ; i++){
+	   	   		m+=`<img src="${images[i]}" id="${i}" class="img">`;
+	   		}
+	   		div.innerHTML = m;
+		}
+	</script>
+
+</head>
+<!--
+<body onload="aaa()">
+	=> onload는 body에서만 동작한다
+-->
+<body>	
+	<div id="test">ㅋㅋㅋㅋㅋㅋ</div>
+</body>
+</html>

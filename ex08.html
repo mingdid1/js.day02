@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex08</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const data = ["서울","강원도","충청도",];
+		for(var i=0 ; i<data.length ; i++){
+			document.write(`배열 데이터 : ${data[i]}<br>`);
+		}
+		
+		document.write("<hr>");
+		/*
+		function printArr(item, index){
+			document.write(`${index}, ${item}<br>`);
+		}
+		*/
+		var printArr = (item, index) => {
+			document.write(`${index} . ${item}<br>`);
+		}
+		data.forEach( printArr );
+	
+		document.write("<hr>");
+		data.forEach( (item, index) => {
+			document.write(`${index} : ${item}<br>`);
+		} );
+		
+		document.write("<hr>");
+		let msg ="<table border='1'>";
+		msg += "<tr><th>이름</th></tr>"
+	
+		data.forEach( (d)=>{ 
+			msg += "<tr>";
+			msg += `<td>${d}</td>`;
+			msg += "</tr>";
+		} );
+	
+		msg += "</table>"
+		document.write( msg );
+	</script>
+</body>
+</html>
+
